@@ -1,7 +1,12 @@
 package com.app.img2pdf.ui;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,12 +20,12 @@ public class HelpTutorialFragment extends Fragment {
     private FragmentHelpTutorialBinding binding;
 
     public HelpTutorialFragment() {
-
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        watchYoutubeVideo();
     }
 
     @Override
@@ -29,4 +34,15 @@ public class HelpTutorialFragment extends Fragment {
 
         return binding.getRoot();
     }
+
+    public void watchYoutubeVideo() {
+        Intent appIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:" + "CtjJ5HTYZ_k"));
+        Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + "CtjJ5HTYZ_k"));
+        try {
+            startActivity(appIntent);
+        } catch (ActivityNotFoundException ex) {
+            startActivity(webIntent);
+        }
+    }
+
 }
