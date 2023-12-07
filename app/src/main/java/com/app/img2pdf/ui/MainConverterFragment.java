@@ -9,23 +9,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.img2pdf.R;
-import com.app.img2pdf.databinding.FragmentHelpTutorialBinding;
+import com.app.img2pdf.databinding.FragmentMainConverterBinding;
 
-public class HelpTutorialFragment extends Fragment {
-    private FragmentHelpTutorialBinding binding;
-
-    public HelpTutorialFragment() {
+public class MainConverterFragment extends Fragment {
+    private FragmentMainConverterBinding binding;
+    public MainConverterFragment() {
 
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding=FragmentHelpTutorialBinding.inflate(inflater,container,false);
+        binding=FragmentMainConverterBinding.inflate(inflater,container,false);
 
         return binding.getRoot();
     }

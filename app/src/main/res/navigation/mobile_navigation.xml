@@ -3,23 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/menu_share_app_with_friends">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.app.img2pdf.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_help_tutorial"
+        android:name="com.app.img2pdf.ui.HelpTutorialFragment"
+        android:label="@string/menu_help_tutorial"
+        tools:layout="@layout/fragment_help_tutorial" />
+    <fragment
+        android:id="@+id/menu_share_app_with_friends"
+        android:name="com.app.img2pdf.ui.shareappwithfriends.ShareAppWithFriendsFragment"
+        android:label="@string/menu_share_app_with_friends"
+        tools:layout="@layout/fragment_share_app_with_friends" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.app.img2pdf.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/menu_contact_support"
+        android:name="com.app.img2pdf.ui.contactsupport.ContactSupportFragment"
+        android:label="@string/menu_contact_support"
+        tools:layout="@layout/fragment_contact_support" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.app.img2pdf.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/menu_rate_app"
+        android:name="com.app.img2pdf.ui.rateappfragment.RateAppFragment"
+        android:label="@string/menu_rate_app"
+        tools:layout="@layout/fragment_rate_app" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.app.img2pdf.ui.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

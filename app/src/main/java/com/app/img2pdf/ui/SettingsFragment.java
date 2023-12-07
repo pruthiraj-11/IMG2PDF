@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.img2pdf.R;
+import com.app.img2pdf.databinding.FragmentSettingsBinding;
 
 public class SettingsFragment extends Fragment {
 
-
+    private FragmentSettingsBinding binding;
     public SettingsFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -25,6 +26,8 @@ public class SettingsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        binding=FragmentSettingsBinding.inflate(inflater,container,false);
+
+        return binding.getRoot();
     }
 }
