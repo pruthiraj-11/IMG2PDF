@@ -1,24 +1,17 @@
 package com.app.img2pdf.ui;
 
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.app.img2pdf.R;
-import com.app.img2pdf.databinding.FragmentHelpTutorialBinding;
-import com.google.android.material.navigation.NavigationView;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
-import java.util.Objects;
+import com.app.img2pdf.databinding.FragmentHelpTutorialBinding;
 
 public class HelpTutorialFragment extends Fragment {
     private FragmentHelpTutorialBinding binding;
@@ -33,10 +26,9 @@ public class HelpTutorialFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding=FragmentHelpTutorialBinding.inflate(inflater,container,false);
 
-        NavigationView navigationView = requireActivity().findViewById(R.id.nav_view);
 
         return binding.getRoot();
     }
