@@ -17,30 +17,25 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.app.img2pdf.databinding.ActivityMainBinding;
-import com.app.img2pdf.ui.MainConverterFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
     private long pressedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.app.img2pdf.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
-
-        getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment_content_main,new MainConverterFragment()).commit();
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Add photo", Snackbar.LENGTH_LONG)
-                        .setAction("OK", null).show();
+                Snackbar.make(view, "Add photo", Snackbar.LENGTH_LONG).setAction("OK", null).show();
             }
         });
         DrawerLayout drawer = binding.drawerLayout;
