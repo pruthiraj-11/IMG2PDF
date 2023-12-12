@@ -22,42 +22,8 @@
 
     <include layout="@layout/content_main" />
 
-
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/fab"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom|end"-->
-<!--        android:layout_marginEnd="@dimen/fab_margin"-->
-<!--        android:layout_marginBottom="16dp"-->
-<!--        android:src="@drawable/baseline_add_24" />-->
-
-    <com.nambimobile.widgets.efab.ExpandableFabLayout
-        android:layout_gravity="bottom|end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <com.nambimobile.widgets.efab.Overlay
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:overlay_orientation="portrait"/>
-
-        <com.nambimobile.widgets.efab.ExpandableFab
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="@dimen/fab_margin"
-            android:layout_marginBottom="16dp"
-            app:efab_orientation="portrait"/>
-
-        <com.nambimobile.widgets.efab.FabOption
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_orientation="portrait"
-            app:label_text="Portrait Option 1"
-            android:onClick="onClickPortraitOption1"/>
-
-    </com.nambimobile.widgets.efab.ExpandableFabLayout>
-
+    <include
+        android:id="@+id/expandable_fab_layout"
+        layout="@layout/expandable_fab_layout"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

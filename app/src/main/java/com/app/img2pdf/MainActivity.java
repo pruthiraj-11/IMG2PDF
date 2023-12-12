@@ -1,6 +1,8 @@
 package com.app.img2pdf;
 
+
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,6 +12,7 @@ import android.widget.Toast;
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -32,7 +35,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
+
+        int nightModeFlags = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        switch (nightModeFlags) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                setContentView(binding.getRoot());
+                Toast.makeText(this, "Light mode enabled.", Toast.LENGTH_SHORT).show();
+                break;
+            case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                Toast.makeText(this, "Can't change theme.", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+        binding.appBarMain.expandableFabLayout.expandableFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Add photo", Snackbar.LENGTH_LONG).setAction("OK", null).show();
